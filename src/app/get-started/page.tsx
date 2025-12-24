@@ -103,11 +103,11 @@ Credit Range: ${creditRange}`;
                             </a>
 
                             <div className="flex flex-col gap-1 lg:gap-2">
-                                <h1 className="text-xl font-semibold text-primary md:text-2xl lg:text-display-xs">
+                                <h1 className="text-lg font-semibold text-primary sm:text-xl md:text-2xl lg:text-display-xs">
                                     Get Your Personalized Rate
                                 </h1>
-                                <p className="text-sm text-tertiary lg:text-md">
-                                    Connect with a licensed loan expert. No obligation. Same-day pre-approval available.
+                                <p className="text-xs text-tertiary sm:text-sm lg:text-md">
+                                    Connect with a licensed loan expert. No obligation. Same-day pre-approval.
                                 </p>
                             </div>
                         </div>

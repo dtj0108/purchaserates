@@ -9,15 +9,15 @@ import { LinkedIn, X } from "@/components/foundations/social-icons";
 
 const HeaderSpaceBetween = () => {
     return (
-        <section className="bg-primary py-16 md:py-24">
+        <section className="bg-primary py-12 sm:py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="mb-3 text-sm font-semibold text-brand-secondary md:text-md">Nice to meet you</div>
+                <div className="mb-2 text-xs font-semibold text-brand-secondary sm:text-sm md:text-md sm:mb-3">Nice to meet you</div>
                 <div className="flex flex-col gap-x-16 lg:flex-row">
-                    <h1 className="flex-1 text-display-md font-semibold text-primary md:text-display-lg">
+                    <h1 className="flex-1 text-2xl font-semibold text-primary sm:text-display-sm md:text-display-md lg:text-display-lg">
                         Our mission is to help you find the best mortgage rates
                     </h1>
 
-                    <p className="w-full mt-4 text-lg text-tertiary md:mt-6 md:text-xl lg:mt-3 lg:max-w-120">
+                    <p className="w-full mt-3 text-base text-tertiary sm:text-lg sm:mt-4 md:mt-6 md:text-xl lg:mt-3 lg:max-w-120">
                         PurchaseRates.com is a mortgage technology platform that connects homebuyers with licensed loan experts. 
                         We believe everyone deserves access to competitive rates and transparent guidance when financing their home purchase.
                     </p>
@@ -29,10 +29,10 @@ const HeaderSpaceBetween = () => {
 
 const MetricsCardGrayLight = () => {
     return (
-        <section className="bg-primary pb-16 md:pb-24">
+        <section className="bg-primary pb-12 sm:pb-16 md:pb-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col gap-8 rounded-2xl bg-secondary px-6 py-10 md:gap-16 md:rounded-none md:bg-transparent md:p-0">
-                    <dl className="flex flex-col gap-8 rounded-2xl bg-secondary md:flex-row md:p-16">
+                <div className="flex flex-col gap-6 rounded-xl bg-secondary px-4 py-8 sm:gap-8 sm:rounded-2xl sm:px-6 sm:py-10 md:gap-16 md:rounded-none md:bg-transparent md:p-0">
+                    <dl className="flex flex-col gap-6 rounded-xl bg-secondary sm:gap-8 sm:rounded-2xl md:flex-row md:p-16">
                         {[
                             { title: "4,000+", subtitle: "Homebuyers helped" },
                             { title: "4.9/5", subtitle: "Average rating" },

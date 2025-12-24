@@ -81,25 +81,25 @@ const HeroScreenMockup01 = () => {
         <div className="relative overflow-hidden bg-secondary_alt">
             <Header />
 
-            <section className="relative overflow-hidden py-16 md:py-24">
+            <section className="relative overflow-hidden py-12 sm:py-16 md:py-24">
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
                     <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-                        <h1 className="text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">
+                        <h1 className="text-3xl font-semibold text-primary sm:text-display-sm md:text-display-md lg:text-display-lg">
                             Get the Best Purchase Mortgage Rate—Fast
                         </h1>
-                        <p className="mt-4 max-w-3xl text-lg text-tertiary md:mt-6 md:text-xl">
-                            Compare real purchase options and get matched with a loan expert in minutes. No spam. No pressure. Licensed loan experts ready to help.
+                        <p className="mt-4 max-w-3xl text-base text-tertiary sm:text-lg md:mt-6 md:text-xl">
+                            Compare real purchase options and get matched with a loan expert in minutes. No spam. No pressure.
                         </p>
-                        <div className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
-                            <Button color="secondary" size="xl" href="/rates">
+                        <div className="mt-6 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start sm:mt-8 md:mt-12">
+                            <Button color="secondary" size="lg" href="/rates" className="sm:size-xl">
                                 View Rates Dashboard
                             </Button>
-                            <Button size="xl" href="/get-started">Get My Rate</Button>
+                            <Button size="lg" href="/get-started" className="sm:size-xl">Get My Rate</Button>
                         </div>
                     </div>
                 </div>
 
-                <div className="mx-auto mt-16 w-full max-w-container px-4 md:px-8">
+                <div className="mx-auto mt-8 w-full max-w-container px-4 sm:mt-12 md:mt-16 md:px-8">
                     <div className="flex flex-col md:items-start">
                         <div className="mx-auto flex h-full w-full items-center justify-center">
                             <div className="w-full max-w-2xl rounded-2xl bg-primary p-8 shadow-2xl ring-1 ring-secondary">
@@ -208,12 +208,12 @@ const HowItWorksSection = () => {
     ];
 
     return (
-            <section id="how-it-works" className="bg-primary py-16 md:py-24">
+            <section id="how-it-works" className="bg-primary py-12 sm:py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-display-sm font-semibold text-primary md:text-display-md">How It Works</h2>
+                <div className="text-center mb-8 sm:mb-12 md:mb-16">
+                    <h2 className="text-2xl font-semibold text-primary sm:text-display-sm md:text-display-md">How It Works</h2>
                 </div>
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-3">
                     {steps.map((step) => (
                         <div key={step.number} className="flex flex-col items-center text-center">
                             <FeaturedIcon icon={step.icon} size="lg" color="brand" theme="light" />
@@ -237,15 +237,15 @@ const TodaysRatesSection = () => {
     ];
 
     return (
-        <section className="bg-secondary py-16 md:py-24">
+        <section className="bg-secondary py-12 sm:py-16 md:py-24">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-display-sm font-semibold text-primary md:text-display-md">
-                        Today's Purchase Rates <span className="text-tertiary">(Examples)</span>
+                <div className="text-center mb-8 sm:mb-12">
+                    <h2 className="text-xl font-semibold text-primary sm:text-2xl md:text-display-sm lg:text-display-md">
+                        Today's Purchase Rates <span className="text-tertiary text-base sm:text-lg">(Examples)</span>
                     </h2>
-                    <p className="mt-4 text-lg text-tertiary">Rates may vary by credit, LTV, property type, and location.</p>
+                    <p className="mt-3 text-sm text-tertiary sm:text-base md:text-lg md:mt-4">Rates may vary by credit, LTV, property type, and location.</p>
                 </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
+                <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     {rates.map((rate) => (
                         <div key={rate.type} className="flex flex-col gap-2 rounded-xl border border-secondary bg-primary p-6">
                             {rate.badge && (
@@ -311,76 +311,79 @@ const LoanProgramsSection = () => {
     ];
 
     return (
-        <section className="bg-primary py-16 md:py-24">
+        <section className="bg-primary py-12 sm:py-16 md:py-24">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
                 <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+                    <BadgeWithDot color="brand" type="modern" size="sm" className="sm:hidden">
+                        Programs
+                    </BadgeWithDot>
+                    <span className="hidden sm:flex">
+                        <BadgeWithDot color="brand" type="modern" size="md" className="md:hidden">
+                            Loan Programs
+                        </BadgeWithDot>
+                    </span>
                     <span className="hidden md:flex">
                         <BadgeWithDot color="brand" type="modern" size="lg">
                             Loan Programs
                         </BadgeWithDot>
                     </span>
-                    <span className="flex md:hidden">
-                        <BadgeWithDot color="brand" type="modern" size="md">
-                            Loan Programs
-                        </BadgeWithDot>
-                    </span>
-                    <h2 className="mt-4 text-display-sm font-semibold text-primary md:text-display-md">
+                    <h2 className="mt-3 text-xl font-semibold text-primary sm:text-2xl sm:mt-4 md:text-display-sm lg:text-display-md">
                         Find Your Best Purchase Program
                     </h2>
-                    <p className="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+                    <p className="mt-3 text-base text-tertiary sm:text-lg sm:mt-4 md:mt-5 md:text-xl">
                         Whether you're a first-time buyer or seasoned homeowner, we have the right loan program for your needs.
                     </p>
                 </div>
 
-                <div className="mt-12 flex flex-col gap-12 md:mt-16 md:gap-16 lg:items-center">
+                <div className="mt-8 flex flex-col gap-8 sm:mt-12 sm:gap-12 md:mt-16 md:gap-16 lg:items-center">
                     <div className="flex w-full items-center justify-center">
-                        <div className="w-full max-w-4xl rounded-2xl border border-secondary bg-primary p-1 shadow-xl">
-                            <div className="overflow-hidden rounded-xl bg-gradient-to-br from-brand-50 to-success-50">
+                        <div className="w-full max-w-4xl rounded-xl border border-secondary bg-primary p-0.5 shadow-lg sm:p-1 sm:rounded-2xl sm:shadow-xl">
+                            <div className="overflow-hidden rounded-lg bg-gradient-to-br from-brand-50 to-success-50 sm:rounded-xl">
                                 {/* Dashboard Mockup */}
-                                <div className="p-6 md:p-8">
+                                <div className="p-4 sm:p-6 md:p-8">
                                     {/* Header */}
-                                    <div className="mb-6 flex items-center justify-between">
-                                        <div className="flex items-center gap-2">
-                                            <div className="size-3 rounded-full bg-success-500" />
-                                            <span className="text-sm font-semibold text-secondary">Live Rates</span>
+                                    <div className="mb-4 flex items-center justify-between sm:mb-6">
+                                        <div className="flex items-center gap-1.5 sm:gap-2">
+                                            <div className="size-2 rounded-full bg-success-500 sm:size-3" />
+                                            <span className="text-xs font-semibold text-secondary sm:text-sm">Live Rates</span>
                                         </div>
-                                        <div className="text-xs text-tertiary">Updated: Just now</div>
+                                        <div className="text-[10px] text-tertiary sm:text-xs">Updated: Just now</div>
                                     </div>
                                     
                                     {/* Main Rate Cards */}
-                                    <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-                                        <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-secondary">
-                                            <div className="mb-2 text-xs font-medium text-tertiary">30-Year Fixed</div>
-                                            <div className="text-2xl font-bold text-brand-600">6.35%</div>
-                                            <div className="mt-1 flex items-center gap-1 text-xs text-success-600">
-                                                <TrendUp02 className="size-3" />
+                                    <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4 md:gap-4">
+                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
+                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">30-Year Fixed</div>
+                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">6.35%</div>
+                                            <div className="mt-1 flex items-center gap-0.5 text-[10px] text-success-600 sm:text-xs sm:gap-1">
+                                                <TrendUp02 className="size-2.5 sm:size-3" />
                                                 <span>Best rate</span>
                                             </div>
                                         </div>
                                         
-                                        <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-secondary">
-                                            <div className="mb-2 text-xs font-medium text-tertiary">FHA</div>
-                                            <div className="text-2xl font-bold text-brand-600">5.17%</div>
-                                            <div className="mt-1 text-xs text-tertiary">Low down</div>
+                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
+                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">FHA</div>
+                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">5.17%</div>
+                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">Low down</div>
                                         </div>
                                         
-                                        <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-secondary">
-                                            <div className="mb-2 text-xs font-medium text-tertiary">VA</div>
-                                            <div className="text-2xl font-bold text-brand-600">5.25%</div>
-                                            <div className="mt-1 text-xs text-tertiary">0% down</div>
+                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
+                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">VA</div>
+                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">5.25%</div>
+                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">0% down</div>
                                         </div>
                                         
-                                        <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-secondary">
-                                            <div className="mb-2 text-xs font-medium text-tertiary">Jumbo</div>
-                                            <div className="text-2xl font-bold text-brand-600">6.45%</div>
-                                            <div className="mt-1 text-xs text-tertiary">High value</div>
+                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
+                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">Jumbo</div>
+                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">6.45%</div>
+                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">High value</div>
                                         </div>
                                     </div>
                                     
                                     {/* Mini Chart */}
-                                    <div className="mt-6 rounded-lg bg-white p-4 shadow-sm ring-1 ring-secondary">
-                                        <div className="mb-3 text-xs font-medium text-secondary">Rate Trends (30 Days)</div>
-                                        <div className="flex h-20 items-end justify-between gap-1">
+                                    <div className="mt-4 rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:mt-6 sm:p-4">
+                                        <div className="mb-2 text-[10px] font-medium text-secondary sm:text-xs sm:mb-3">Rate Trends (30 Days)</div>
+                                        <div className="flex h-16 items-end justify-between gap-0.5 sm:h-20 sm:gap-1">
                                             {[45, 52, 48, 55, 58, 54, 60, 62, 58, 65, 68, 64, 70, 72].map((height, i) => (
                                                 <div
                                                     key={i}

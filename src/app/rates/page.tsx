@@ -117,10 +117,10 @@ const MetricCard = ({
     trend: "up" | "down";
 }) => {
     return (
-        <div className="flex-1 rounded-xl border border-secondary bg-primary p-5 shadow-xs">
-            <p className="text-sm font-medium text-tertiary">{title}</p>
-            <p className="mt-2 text-display-sm font-semibold text-primary">{value}</p>
-            <div className="mt-2 flex items-center gap-1.5">
+        <div className="flex-1 rounded-lg border border-secondary bg-primary p-4 shadow-xs sm:rounded-xl sm:p-5">
+            <p className="text-xs font-medium text-tertiary sm:text-sm">{title}</p>
+            <p className="mt-1.5 text-2xl font-semibold text-primary sm:mt-2 sm:text-display-sm">{value}</p>
+            <div className="mt-1.5 flex items-center gap-1 sm:mt-2 sm:gap-1.5">
                 {trend === "down" ? (
                     <>
                         <TrendDown02 className="size-4 text-success-600" />
@@ -265,82 +265,66 @@ export default function RatesPage() {
         <div className="min-h-screen bg-secondary_alt">
             <Header />
 
-            <main className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
+            <main className="mx-auto max-w-7xl px-4 py-6 sm:py-8 md:px-8 md:py-12">
                 {/* Page Header */}
-                <div className="mb-8">
-                    <h1 className="text-display-sm font-semibold text-primary md:text-display-md">
+                <div className="mb-6 sm:mb-8">
+                    <h1 className="text-2xl font-semibold text-primary sm:text-display-sm md:text-display-md">
                         Current Mortgage Rates
                     </h1>
-                    <p className="mt-2 text-lg text-tertiary">
+                    <p className="mt-2 text-sm text-tertiary sm:text-base md:text-lg">
                         Updated {new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} at{" "}
                         {new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}
                     </p>
                 </div>
 
                 {/* Metrics Cards */}
-                <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+                <div className="mb-6 grid grid-cols-1 gap-3 sm:mb-8 sm:gap-4 md:grid-cols-3">
                     <MetricCard title="30-Year Fixed" value="6.35%" change="0.12%" trend="up" />
                     <MetricCard title="15-Year Fixed" value="5.49%" change="0.08%" trend="down" />
                     <MetricCard title="FHA 30-Year" value="5.17%" change="0.15%" trend="down" />
                 </div>
 
                 {/* Interactive Chart Section */}
-                <div className="mb-8">
+                <div className="mb-6 sm:mb-8">
                     <RateChartInteractive />
                 </div>
 
                 {/* Rates Table */}
-                <div className="rounded-xl border border-secondary bg-primary shadow-xs">
-                    <div className="border-b border-secondary p-6">
-                        <h2 className="text-xl font-semibold text-primary">Compare Rates</h2>
-                        <p className="mt-1 text-sm text-tertiary">Based on $400,000 loan amount</p>
+                <div className="rounded-lg border border-secondary bg-primary shadow-xs sm:rounded-xl">
+                    <div className="border-b border-secondary p-4 sm:p-6">
+                        <h2 className="text-lg font-semibold text-primary sm:text-xl">Compare Rates</h2>
+                        <p className="mt-1 text-xs text-tertiary sm:text-sm">Based on $400,000 loan amount</p>
                     </div>
                     
-                    <div className="overflow-x-auto">
-                        <table className="w-full">
+                    <div className="overflow-x-auto -mx-4 sm:mx-0">
+                        <table className="w-full min-w-[640px]">
                             <thead>
                                 <tr className="border-b border-secondary bg-secondary_subtle">
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">Loan Type</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">Rate</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">APR</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">Points</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">Monthly Payment</th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-secondary uppercase">Change</th>
-                                    <th className="px-6 py-3 text-right text-xs font-medium text-secondary uppercase">Action</th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-secondary uppercase sm:px-6 sm:py-3 sm:text-xs">Loan Type</th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-secondary uppercase sm:px-6 sm:py-3 sm:text-xs">Rate</th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-secondary uppercase sm:px-6 sm:py-3 sm:text-xs">APR</th>
+                                    <th className="px-3 py-2.5 text-left text-[10px] font-medium text-secondary uppercase sm:px-6 sm:py-3 sm:text-xs">Payment</th>
+                                    <th className="px-3 py-2.5 text-right text-[10px] font-medium text-secondary uppercase sm:px-6 sm:py-3 sm:text-xs">Action</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-secondary">
                                 {currentRates.map((rate) => (
                                     <tr key={rate.id} className="hover:bg-secondary_subtle transition-colors">
-                                        <td className="px-6 py-4">
-                                            <div className="flex flex-col">
-                                                <span className="font-semibold text-primary">{rate.loanType}</span>
-                                            </div>
+                                        <td className="px-3 py-3 sm:px-6 sm:py-4">
+                                            <span className="text-xs font-semibold text-primary sm:text-sm">{rate.loanType}</span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="text-lg font-bold text-brand-600">{rate.currentRate}%</span>
+                                        <td className="px-3 py-3 sm:px-6 sm:py-4">
+                                            <span className="text-base font-bold text-brand-600 sm:text-lg">{rate.currentRate}%</span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="text-sm text-secondary">{rate.apr}%</span>
+                                        <td className="px-3 py-3 sm:px-6 sm:py-4">
+                                            <span className="text-xs text-secondary sm:text-sm">{rate.apr}%</span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="text-sm text-secondary">{rate.points}</span>
+                                        <td className="px-3 py-3 sm:px-6 sm:py-4">
+                                            <span className="text-xs font-medium text-primary sm:text-sm">${rate.monthlyPayment.toLocaleString()}</span>
                                         </td>
-                                        <td className="px-6 py-4">
-                                            <span className="font-medium text-primary">${rate.monthlyPayment.toLocaleString()}/mo</span>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <Badge 
-                                                color={rate.trend === "down" ? "success" : "error"} 
-                                                size="sm"
-                                                type="modern"
-                                            >
-                                                {rate.trend === "down" ? "↓" : "↑"} {Math.abs(rate.change)}%
-                                            </Badge>
-                                        </td>
-                                        <td className="px-6 py-4 text-right">
-                                            <Button size="sm" href="/get-started">
-                                                Get My Rate
+                                        <td className="px-3 py-3 text-right sm:px-6 sm:py-4">
+                                            <Button size="sm" href="/get-started" className="text-xs">
+                                                Get Rate
                                             </Button>
                                         </td>
                                     </tr>
