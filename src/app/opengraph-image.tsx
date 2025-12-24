@@ -83,24 +83,21 @@ export default async function Image() {
           Compare rates and get matched with licensed loan experts. No spam, no pressure.
         </div>
 
-        {/* Rate Badge */}
+        {/* CTA Badge */}
         <div
           style={{
             marginTop: '40px',
             background: 'white',
-            padding: '20px 40px',
+            padding: '24px 48px',
             borderRadius: '16px',
             display: 'flex',
             alignItems: 'center',
-            gap: '20px',
+            fontSize: '32px',
+            fontWeight: '600',
+            color: '#16a34a',
           }}
         >
-          <span style={{ fontSize: '48px', fontWeight: 'bold', color: '#16a34a' }}>
-            6.35%
-          </span>
-          <span style={{ fontSize: '20px', color: '#666' }}>
-            Starting Rate
-          </span>
+          See the starting rates now →
         </div>
       </div>
     ),
