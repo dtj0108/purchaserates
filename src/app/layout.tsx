@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: "PurchaseRates.com - Find the Best Mortgage Rates",
         description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure.",
-        url: "/",
         siteName: "PurchaseRates.com",
         images: [
             {
-                url: '/opengraph-image',
+                url: '/opengraph-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'PurchaseRates.com - Find the Best Mortgage Rates',
+                alt: 'PurchaseRates.com',
+                type: 'image/png',
             },
         ],
         locale: "en_US",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "PurchaseRates.com - Find the Best Mortgage Rates",
         description: "Compare real purchase mortgage options and get matched with licensed loan experts.",
-        images: ['/opengraph-image'],
+        images: ['/opengraph-image.png'],
     },
 };
 
