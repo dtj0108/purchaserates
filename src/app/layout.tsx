@@ -13,11 +13,11 @@ const inter = Inter({
 export const metadata: Metadata = {
     title: "PurchaseRates.com - Find the Best Mortgage Rates",
     description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure. Same-day pre-approval available.",
-    metadataBase: new URL('https://purchaserates.com'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
     openGraph: {
         title: "PurchaseRates.com - Find the Best Mortgage Rates",
         description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure.",
-        url: "https://purchaserates.com",
+        url: "/",
         siteName: "PurchaseRates.com",
         images: [
             {
