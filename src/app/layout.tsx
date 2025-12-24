@@ -13,17 +13,20 @@ const inter = Inter({
 export const metadata: Metadata = {
     title: "PurchaseRates.com - Find the Best Mortgage Rates",
     description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure. Same-day pre-approval available.",
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_SITE_URL || 
+        (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+    ),
     openGraph: {
         title: "PurchaseRates.com - Find the Best Mortgage Rates",
         description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure.",
         siteName: "PurchaseRates.com",
         images: [
             {
-                url: '/opengraph-image.png',
+                url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'PurchaseRates.com',
+                alt: 'PurchaseRates.com - Find the Best Mortgage Rates',
                 type: 'image/png',
             },
         ],
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "PurchaseRates.com - Find the Best Mortgage Rates",
         description: "Compare real purchase mortgage options and get matched with licensed loan experts.",
-        images: ['/opengraph-image.png'],
+        images: ['/og-image.png'],
     },
 };
 
