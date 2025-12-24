@@ -11,8 +11,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Purchase Rates",
-    description: "Your purchase rates application",
+    title: "PurchaseRates.com - Find the Best Mortgage Rates",
+    description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure. Same-day pre-approval available.",
+    openGraph: {
+        title: "PurchaseRates.com - Find the Best Mortgage Rates",
+        description: "Compare real purchase mortgage options and get matched with licensed loan experts. No spam, no pressure.",
+        url: "https://purchaserates.com",
+        siteName: "PurchaseRates.com",
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "PurchaseRates.com - Find the Best Mortgage Rates",
+        description: "Compare real purchase mortgage options and get matched with licensed loan experts.",
+    },
 };
 
 export const viewport: Viewport = {
