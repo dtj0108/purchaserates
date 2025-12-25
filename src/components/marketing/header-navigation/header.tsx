@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/base/buttons/button";
 import { PurchaseRatesLogo } from "@/components/foundations/logo/purchaserates-logo";
 import { Phone } from "@untitledui/icons";
@@ -9,23 +10,23 @@ export const Header = () => {
         <header className="relative z-10 border-b border-secondary bg-primary">
             <div className="mx-auto max-w-container px-4 md:px-8">
                 <div className="flex h-16 items-center justify-between md:h-20">
-                    <a href="/">
+                    <Link href="/">
                         <PurchaseRatesLogo className="h-8 md:h-10" />
-                    </a>
-                    
+                    </Link>
+
                     <nav className="hidden items-center gap-8 md:flex">
-                        <a href="/" className="text-md font-medium text-secondary hover:text-primary transition-colors">
+                        <Link href="/" className="text-md font-medium text-secondary hover:text-primary transition-colors">
                             Home
-                        </a>
+                        </Link>
                         <a href="#programs" className="text-md font-medium text-secondary hover:text-primary transition-colors">
                             Programs
                         </a>
-                        <a href="/about" className="text-md font-medium text-secondary hover:text-primary transition-colors">
+                        <Link href="/about" className="text-md font-medium text-secondary hover:text-primary transition-colors">
                             About
-                        </a>
-                        <a href="#reviews" className="text-md font-medium text-secondary hover:text-primary transition-colors">
-                            Reviews
-                        </a>
+                        </Link>
+                        <Link href="/articles" className="text-md font-medium text-secondary hover:text-primary transition-colors">
+                            Articles
+                        </Link>
                         <a href="#faqs" className="text-md font-medium text-secondary hover:text-primary transition-colors">
                             FAQs
                         </a>

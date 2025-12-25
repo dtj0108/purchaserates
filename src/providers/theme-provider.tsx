@@ -5,9 +5,11 @@ import { type PropsWithChildren } from "react";
 
 export function ThemeProvider({ children }: PropsWithChildren) {
     return (
-        <NextThemeProvider 
-            disableTransitionOnChange 
-            attribute="class" 
+        <NextThemeProvider
+            disableTransitionOnChange
+            attribute="class"
+            defaultTheme="light"
+            forcedTheme="light"
             value={{ light: "light-mode", dark: "dark-mode" }}
         >
             {children}

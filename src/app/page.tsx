@@ -1,71 +1,16 @@
 "use client";
 
-import { type FC, Fragment, type HTMLAttributes, useState } from "react";
-import { ArrowRight, CheckCircle, Home04, MessageChatCircle, Percent01, PlayCircle, TrendUp02, Users01, ZapFast } from "@untitledui/icons";
-import { Collection, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
+import { useState } from "react";
+import { CheckCircle, Home04, Percent01, Phone, TrendUp02, Users01 } from "@untitledui/icons";
 import { Avatar } from "@/components/base/avatar/avatar";
-import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { PurchaseRatesLogo } from "@/components/foundations/logo/purchaserates-logo";
 import { RatingBadge } from "@/components/foundations/rating-badge";
-import { AngelList, Dribbble, Facebook, GitHub, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { Header } from "@/components/marketing/header-navigation/header";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
-import { FeatureTextFeaturedIconTopCentered } from "@/components/sections/feature-text";
 import { BadgeWithDot } from "@/components/base/badges/badge-with-dot";
+import { HouseIllustration } from "@/components/illustrations/HouseIllustration";
 import { cx } from "@/utils/cx";
-
-const footerSocials = [
-    { label: "X (formerly Twitter)", icon: X, href: "https://x.com/" },
-    { label: "LinkedIn", icon: LinkedIn, href: "https://www.linkedin.com/" },
-    { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/" },
-    { label: "GitHub", icon: GitHub, href: "https://github.com/" },
-    { label: "AngelList", icon: AngelList, href: "https://angel.co/" },
-    { label: "Dribbble", icon: Dribbble, href: "https://dribbble.com/" },
-    { label: "Layers", icon: Layers, href: "https://layers.com/" },
-];
-
-const footerNavList = [
-    {
-        label: "Product",
-        items: [
-            { label: "Mortgage Rates", href: "#" },
-            { label: "Programs", href: "#" },
-            { label: "Calculator", href: "#" },
-            { label: "Pre-Approval", href: "#" },
-            { label: "Refinance", href: "#" },
-        ],
-    },
-    {
-        label: "Company",
-        items: [
-            { label: "About us", href: "#" },
-            { label: "Careers", href: "#" },
-            { label: "Press", href: "#" },
-            { label: "Contact", href: "#" },
-        ],
-    },
-    {
-        label: "Resources",
-        items: [
-            { label: "Blog", href: "#" },
-            { label: "Mortgage Guide", href: "#" },
-            { label: "First-Time Buyers", href: "#" },
-            { label: "Help Centre", href: "#" },
-            { label: "Support", href: "#" },
-        ],
-    },
-    {
-        label: "Legal",
-        items: [
-            { label: "Terms", href: "#" },
-            { label: "Privacy", href: "#" },
-            { label: "Licensing", href: "#" },
-            { label: "NMLS Info", href: "#" },
-        ],
-    },
-];
 
 const lenders = [
     { name: "Wells Fargo", imageUrl: "https://www.untitledui.com/logos/logotype/color/odeaolabs.svg" },
@@ -81,64 +26,72 @@ const HeroScreenMockup01 = () => {
         <div className="relative overflow-hidden bg-secondary_alt">
             <Header />
 
-            <section className="relative overflow-hidden py-12 sm:py-16 md:py-24">
+            <section className="relative overflow-hidden py-12 sm:py-16 md:py-20">
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
-                    <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-                        <h1 className="text-3xl font-semibold text-primary sm:text-display-sm md:text-display-md lg:text-display-lg">
-                            Get the Best Purchase Mortgage Rate—Fast
-                        </h1>
-                        <p className="mt-4 max-w-3xl text-base text-tertiary sm:text-lg md:mt-6 md:text-xl">
-                            Compare real purchase options and get matched with a loan expert in minutes. No spam. No pressure.
-                        </p>
-                        <div className="mt-6 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start sm:mt-8 md:mt-12">
-                            <Button color="secondary" size="lg" href="/rates" className="sm:size-xl">
-                                View Rates Dashboard
-                            </Button>
-                            <Button size="lg" href="/get-started" className="sm:size-xl">Get My Rate</Button>
-                        </div>
-                    </div>
-                </div>
+                    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+                        {/* Left Column - Content & Form */}
+                        <div className="flex flex-col">
+                            <h1 className="text-3xl font-semibold text-primary sm:text-display-sm md:text-display-md">
+                                Get the Best Purchase Mortgage Rate—Fast
+                            </h1>
+                            <p className="mt-4 text-base text-tertiary sm:text-lg md:mt-5 md:text-xl">
+                                Compare real purchase options and get matched with a loan expert in minutes. No spam. No pressure.
+                            </p>
 
-                <div className="mx-auto mt-8 w-full max-w-container px-4 sm:mt-12 md:mt-16 md:px-8">
-                    <div className="flex flex-col md:items-start">
-                        <div className="mx-auto flex h-full w-full items-center justify-center">
-                            <div className="w-full max-w-2xl rounded-2xl bg-primary p-8 shadow-2xl ring-1 ring-secondary">
-                                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                            {/* Trust indicators */}
+                            <ul className="mt-6 flex flex-col gap-3">
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle className="size-5 text-fg-success-primary shrink-0" />
+                                    <span className="text-md text-secondary">Licensed loan experts</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle className="size-5 text-fg-success-primary shrink-0" />
+                                    <span className="text-md text-secondary">Secure form</span>
+                                </li>
+                                <li className="flex items-center gap-3">
+                                    <CheckCircle className="size-5 text-fg-success-primary shrink-0" />
+                                    <span className="text-md text-secondary">Same-day pre-approval available</span>
+                                </li>
+                            </ul>
+
+                            {/* Calculator Form */}
+                            <div className="mt-8 rounded-xl bg-primary p-6 shadow-lg ring-1 ring-secondary">
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                                     <div>
-                                        <label className="block text-sm font-medium text-secondary mb-2">Home Price</label>
-                                        <input 
-                                            type="text" 
-                                            defaultValue="$400,000" 
-                                            className="w-full rounded-lg border border-secondary bg-primary px-4 py-3 text-lg font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+                                        <label className="block text-xs font-medium text-tertiary mb-1.5">Home Price</label>
+                                        <input
+                                            type="text"
+                                            defaultValue="$400,000"
+                                            className="w-full rounded-lg border border-secondary bg-primary px-3 py-2.5 text-md font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-secondary mb-2">Down Payment</label>
-                                        <input 
-                                            type="text" 
-                                            defaultValue="10%" 
-                                            className="w-full rounded-lg border border-secondary bg-primary px-4 py-3 text-lg font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+                                        <label className="block text-xs font-medium text-tertiary mb-1.5">Down Payment</label>
+                                        <input
+                                            type="text"
+                                            defaultValue="10%"
+                                            className="w-full rounded-lg border border-secondary bg-primary px-3 py-2.5 text-md font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-secondary mb-2">ZIP Code</label>
-                                        <input 
-                                            type="text" 
-                                            defaultValue="90210" 
-                                            className="w-full rounded-lg border border-secondary bg-primary px-4 py-3 text-lg font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
+                                        <label className="block text-xs font-medium text-tertiary mb-1.5">ZIP Code</label>
+                                        <input
+                                            type="text"
+                                            defaultValue="90210"
+                                            className="w-full rounded-lg border border-secondary bg-primary px-3 py-2.5 text-md font-semibold text-primary focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand"
                                         />
                                     </div>
                                 </div>
-                                <div className="mt-6">
-                                    <label className="block text-sm font-medium text-secondary mb-2">Credit Range</label>
+                                <div className="mt-4">
+                                    <label className="block text-xs font-medium text-tertiary mb-1.5">Credit Range</label>
                                     <div className="flex gap-2">
                                         {["Excellent", "Good", "Fair"].map((credit) => (
                                             <button
                                                 key={credit}
                                                 className={cx(
-                                                    "flex-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors",
-                                                    credit === "Excellent" 
-                                                        ? "bg-brand-solid text-white" 
+                                                    "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                                                    credit === "Excellent"
+                                                        ? "bg-brand-solid text-white"
                                                         : "bg-secondary text-secondary hover:bg-tertiary"
                                                 )}
                                             >
@@ -147,19 +100,27 @@ const HeroScreenMockup01 = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <Button size="xl" className="w-full mt-6" href="/get-started">
+                                <Button size="lg" className="w-full mt-4" href="/get-started">
                                     Get My Rate
                                 </Button>
-                                <a href="/rates" className="mt-4 text-center text-sm text-brand-secondary hover:text-brand-secondary_hover font-medium block transition-colors">
-                                    See Today's Rates →
-                                </a>
                             </div>
+
+                            <a href="/rates" className="mt-3 text-sm text-brand-secondary hover:text-brand-secondary_hover font-medium transition-colors">
+                                See Today's Rates →
+                            </a>
                         </div>
-                        
-                        <div className="mx-auto mt-8 flex items-center gap-4">
-                            <RatingBadge />
-                            <div className="h-8 w-px bg-secondary" />
-                            <p className="text-sm text-tertiary italic">"Locked a great rate and closed on time." — Jordan M.</p>
+
+                        {/* Right Column - Illustration */}
+                        <div className="relative flex flex-col items-center justify-center lg:items-end">
+                            <HouseIllustration />
+
+                            {/* Rating and testimonial */}
+                            <div className="mt-6 flex flex-col items-center gap-3 rounded-lg bg-primary/80 px-4 py-3 backdrop-blur-sm lg:items-start">
+                                <RatingBadge />
+                                <p className="text-sm text-tertiary italic text-center lg:text-left">
+                                    "Locked a great rate and closed on time." — Jordan M.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,19 +169,36 @@ const HowItWorksSection = () => {
     ];
 
     return (
-            <section id="how-it-works" className="bg-primary py-12 sm:py-16 md:py-24">
+        <section id="how-it-works" className="bg-primary py-12 sm:py-16 md:py-20">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="text-center mb-8 sm:mb-12 md:mb-16">
-                    <h2 className="text-2xl font-semibold text-primary sm:text-display-sm md:text-display-md">How It Works</h2>
-                </div>
-                <div className="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-3">
-                    {steps.map((step) => (
-                        <div key={step.number} className="flex flex-col items-center text-center">
-                            <FeaturedIcon icon={step.icon} size="lg" color="brand" theme="light" />
-                            <h3 className="mt-5 text-xl font-semibold text-primary">{step.title}</h3>
-                            <p className="mt-2 text-md text-tertiary">{step.description}</p>
+                {/* Two-column layout: steps on left, press logos on right */}
+                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_1fr] lg:items-center lg:gap-16">
+                    {/* Left: How it works */}
+                    <div>
+                        <h2 className="text-2xl font-semibold text-primary mb-8 sm:text-display-sm">
+                            How It Works
+                        </h2>
+                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                            {steps.map((step) => (
+                                <div key={step.number} className="flex flex-col items-center text-center sm:items-start sm:text-left">
+                                    <FeaturedIcon icon={step.icon} size="md" color="brand" theme="light" />
+                                    <h3 className="mt-4 text-lg font-semibold text-primary">{step.title}</h3>
+                                    <p className="mt-1 text-sm text-tertiary">{step.description}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Right: Press/Trust logos */}
+                    <div className="flex flex-col items-center gap-4 rounded-xl bg-secondary p-6">
+                        <p className="text-sm font-medium text-tertiary">As seen in</p>
+                        <div className="flex flex-wrap items-center justify-center gap-6">
+                            {/* Placeholder press logos */}
+                            <div className="flex h-6 items-center px-3 text-sm font-semibold text-quaternary">Forbes</div>
+                            <div className="flex h-6 items-center px-3 text-sm font-semibold text-quaternary">Zillow</div>
+                            <div className="flex h-6 items-center px-3 text-sm font-semibold text-quaternary">BBB</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -229,7 +207,7 @@ const HowItWorksSection = () => {
 
 const TodaysRatesSection = () => {
     const rates = [
-        { type: "30-Year Fixed", rate: "5.99%", badge: "Most Popular" },
+        { type: "30-Year Fixed", rate: "5.99%" },
         { type: "15-Year Fixed", rate: "5.49%" },
         { type: "FHA", rate: "5.17%" },
         { type: "VA", rate: "5.17%" },
@@ -237,34 +215,35 @@ const TodaysRatesSection = () => {
     ];
 
     return (
-        <section className="bg-secondary py-12 sm:py-16 md:py-24">
+        <section className="bg-secondary py-8 sm:py-12">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-xl font-semibold text-primary sm:text-2xl md:text-display-sm lg:text-display-md">
-                        Today's Purchase Rates <span className="text-tertiary text-base sm:text-lg">(Examples)</span>
-                    </h2>
-                    <p className="mt-3 text-sm text-tertiary sm:text-base md:text-lg md:mt-4">Rates may vary by credit, LTV, property type, and location.</p>
-                </div>
-                <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-                    {rates.map((rate) => (
-                        <div key={rate.type} className="flex flex-col gap-2 rounded-xl border border-secondary bg-primary p-6">
-                            {rate.badge && (
-                                <Badge color="success" size="sm" className="self-start">
-                                    {rate.badge}
-                                </Badge>
-                            )}
-                            <div className="flex items-center gap-2">
-                                <CheckCircle className="size-5 text-fg-brand-primary" />
-                                <span className="text-md font-semibold text-primary">{rate.type}</span>
+                <div className="rounded-xl border border-secondary bg-primary p-4 sm:p-6">
+                    <div className="mb-4 text-center">
+                        <h2 className="text-lg font-semibold text-primary sm:text-xl">
+                            Today's Purchase Rates <span className="text-tertiary text-sm">(Examples)</span>
+                        </h2>
+                        <p className="mt-1 text-xs text-tertiary sm:text-sm">
+                            Rates vary by credit, LTV, property type, and location.
+                        </p>
+                    </div>
+
+                    {/* Compact horizontal rate list */}
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-x-8">
+                        {rates.map((rate) => (
+                            <div key={rate.type} className="flex items-center gap-2">
+                                <CheckCircle className="size-4 text-fg-brand-primary shrink-0" />
+                                <span className="text-sm font-medium text-primary">{rate.type}</span>
+                                <span className="text-sm text-tertiary">—</span>
+                                <span className="text-sm font-bold text-brand-tertiary">from {rate.rate}</span>
                             </div>
-                            <p className="text-display-xs font-bold text-brand-tertiary">from {rate.rate}</p>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-8 flex justify-center">
-                    <Button size="lg" color="secondary" href="/rates">
-                        View Full Rates Dashboard
-                    </Button>
+                        ))}
+                    </div>
+
+                    <div className="mt-4 flex justify-center">
+                        <Button size="md" color="secondary" href="/rates">
+                            View All Rates
+                        </Button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -277,143 +256,53 @@ const LoanProgramsSection = () => {
             icon: Home04,
             title: "Conventional",
             subtitle: "Best for closing fastest timeline.",
-            cta: "Learn more",
-            href: "/get-started",
         },
         {
             icon: CheckCircle,
             title: "FHA",
             subtitle: "Flexible credit, low down.",
-            cta: "Learn more",
-            href: "/get-started",
         },
         {
             icon: Users01,
             title: "VA",
-            subtitle: "Eligible veterans, 0%-5% down.",
-            cta: "Learn more",
-            href: "/get-started",
+            subtitle: "Eligible veterans, 0% down.",
         },
         {
             icon: TrendUp02,
             title: "Jumbo",
             subtitle: "High-$ loan amounts.",
-            cta: "Learn more",
-            href: "/get-started",
         },
         {
             icon: Home04,
             title: "First Time Buyer",
-            subtitle: "3%-5% down, payment approvals.",
-            cta: "Learn more",
-            href: "/get-started",
+            subtitle: "3%-5% down options.",
         },
     ];
 
     return (
-        <section className="bg-primary py-12 sm:py-16 md:py-24">
+        <section className="bg-primary py-12 sm:py-16 md:py-20">
             <div className="mx-auto w-full max-w-container px-4 md:px-8">
-                <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-                    <BadgeWithDot color="brand" type="modern" size="sm" className="sm:hidden">
-                        Programs
+                <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center mb-10">
+                    <BadgeWithDot color="brand" type="modern" size="md">
+                        Loan Programs
                     </BadgeWithDot>
-                    <span className="hidden sm:flex">
-                        <BadgeWithDot color="brand" type="modern" size="md" className="md:hidden">
-                            Loan Programs
-                        </BadgeWithDot>
-                    </span>
-                    <span className="hidden md:flex">
-                        <BadgeWithDot color="brand" type="modern" size="lg">
-                            Loan Programs
-                        </BadgeWithDot>
-                    </span>
-                    <h2 className="mt-3 text-xl font-semibold text-primary sm:text-2xl sm:mt-4 md:text-display-sm lg:text-display-md">
+                    <h2 className="mt-4 text-xl font-semibold text-primary sm:text-2xl md:text-display-sm">
                         Find Your Best Purchase Program
                     </h2>
-                    <p className="mt-3 text-base text-tertiary sm:text-lg sm:mt-4 md:mt-5 md:text-xl">
-                        Whether you're a first-time buyer or seasoned homeowner, we have the right loan program for your needs.
-                    </p>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-8 sm:mt-12 sm:gap-12 md:mt-16 md:gap-16 lg:items-center">
-                    <div className="flex w-full items-center justify-center">
-                        <div className="w-full max-w-4xl rounded-xl border border-secondary bg-primary p-0.5 shadow-lg sm:p-1 sm:rounded-2xl sm:shadow-xl">
-                            <div className="overflow-hidden rounded-lg bg-gradient-to-br from-brand-50 to-success-50 sm:rounded-xl">
-                                {/* Dashboard Mockup */}
-                                <div className="p-4 sm:p-6 md:p-8">
-                                    {/* Header */}
-                                    <div className="mb-4 flex items-center justify-between sm:mb-6">
-                                        <div className="flex items-center gap-1.5 sm:gap-2">
-                                            <div className="size-2 rounded-full bg-success-500 sm:size-3" />
-                                            <span className="text-xs font-semibold text-secondary sm:text-sm">Live Rates</span>
-                                        </div>
-                                        <div className="text-[10px] text-tertiary sm:text-xs">Updated: Just now</div>
-                                    </div>
-                                    
-                                    {/* Main Rate Cards */}
-                                    <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-4 md:gap-4">
-                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
-                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">30-Year Fixed</div>
-                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">6.35%</div>
-                                            <div className="mt-1 flex items-center gap-0.5 text-[10px] text-success-600 sm:text-xs sm:gap-1">
-                                                <TrendUp02 className="size-2.5 sm:size-3" />
-                                                <span>Best rate</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
-                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">FHA</div>
-                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">5.17%</div>
-                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">Low down</div>
-                                        </div>
-                                        
-                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
-                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">VA</div>
-                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">5.25%</div>
-                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">0% down</div>
-                                        </div>
-                                        
-                                        <div className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:p-4">
-                                            <div className="mb-1.5 text-[10px] font-medium text-tertiary sm:text-xs sm:mb-2">Jumbo</div>
-                                            <div className="text-xl font-bold text-brand-600 sm:text-2xl">6.45%</div>
-                                            <div className="mt-1 text-[10px] text-tertiary sm:text-xs">High value</div>
-                                        </div>
-                                    </div>
-                                    
-                                    {/* Mini Chart */}
-                                    <div className="mt-4 rounded-lg bg-white p-3 shadow-sm ring-1 ring-secondary sm:mt-6 sm:p-4">
-                                        <div className="mb-2 text-[10px] font-medium text-secondary sm:text-xs sm:mb-3">Rate Trends (30 Days)</div>
-                                        <div className="flex h-16 items-end justify-between gap-0.5 sm:h-20 sm:gap-1">
-                                            {[45, 52, 48, 55, 58, 54, 60, 62, 58, 65, 68, 64, 70, 72].map((height, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="flex-1 rounded-t bg-gradient-to-t from-brand-500 to-brand-400"
-                                                    style={{ height: `${height}%` }}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                {/* Horizontal program cards */}
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    {programs.map((program) => (
+                        <div
+                            key={program.title}
+                            className="flex flex-col items-center gap-3 rounded-xl border border-secondary bg-primary p-6 text-center transition-colors hover:border-brand"
+                        >
+                            <FeaturedIcon icon={program.icon} size="md" color="brand" theme="light" />
+                            <h3 className="text-md font-semibold text-primary">{program.title}</h3>
+                            <p className="text-sm text-tertiary">{program.subtitle}</p>
                         </div>
-                    </div>
-
-                    <ul className="flex flex-1 flex-wrap justify-center gap-x-8 gap-y-10 lg:flex-nowrap">
-                        {programs.map((program) => (
-                            <li key={program.title}>
-                                <FeatureTextFeaturedIconTopCentered
-                                    icon={program.icon}
-                                    title={program.title}
-                                    subtitle={program.subtitle}
-                                    footer={
-                                        <Button color="link-color" size="lg" href={program.href} iconTrailing={ArrowRight}>
-                                            {program.cta}
-                                        </Button>
-                                    }
-                                />
-                            </li>
-                        ))}
-                    </ul>
+                    ))}
                 </div>
             </div>
         </section>
@@ -454,13 +343,48 @@ const CheckItemText = (props: {
 
 const PreApprovalCTA = () => {
     return (
-        <section className="bg-brand-section py-16 md:py-24">
-            <div className="mx-auto max-w-container px-4 md:px-8">
+        <section className="relative bg-brand-section py-16 md:py-24 overflow-hidden">
+            {/* Background cityscape illustration */}
+            <div className="absolute inset-0 pointer-events-none">
+                <svg
+                    className="absolute bottom-0 left-0 w-full h-48 opacity-10"
+                    viewBox="0 0 1200 200"
+                    preserveAspectRatio="xMidYMax slice"
+                    fill="currentColor"
+                >
+                    {/* Houses and buildings silhouette */}
+                    <rect x="50" y="100" width="60" height="100" className="fill-white" />
+                    <polygon points="50,100 80,60 110,100" className="fill-white" />
+                    <rect x="130" y="80" width="40" height="120" className="fill-white" />
+                    <rect x="190" y="120" width="50" height="80" className="fill-white" />
+                    <polygon points="190,120 215,80 240,120" className="fill-white" />
+                    <rect x="260" y="60" width="30" height="140" className="fill-white" />
+                    <rect x="310" y="90" width="70" height="110" className="fill-white" />
+                    <polygon points="310,90 345,50 380,90" className="fill-white" />
+                    <rect x="400" y="110" width="45" height="90" className="fill-white" />
+                    <rect x="470" y="70" width="35" height="130" className="fill-white" />
+                    <rect x="530" y="100" width="55" height="100" className="fill-white" />
+                    <polygon points="530,100 557,65 585,100" className="fill-white" />
+                    <rect x="610" y="85" width="40" height="115" className="fill-white" />
+                    <rect x="670" y="120" width="60" height="80" className="fill-white" />
+                    <polygon points="670,120 700,75 730,120" className="fill-white" />
+                    <rect x="750" y="95" width="50" height="105" className="fill-white" />
+                    <rect x="820" y="110" width="35" height="90" className="fill-white" />
+                    <rect x="880" y="80" width="45" height="120" className="fill-white" />
+                    <polygon points="880,80 902,45 925,80" className="fill-white" />
+                    <rect x="950" y="100" width="60" height="100" className="fill-white" />
+                    <rect x="1030" y="90" width="40" height="110" className="fill-white" />
+                    <polygon points="1030,90 1050,55 1070,90" className="fill-white" />
+                    <rect x="1100" y="110" width="50" height="90" className="fill-white" />
+                </svg>
+            </div>
+
+            <div className="relative mx-auto max-w-container px-4 md:px-8">
                 <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
                     <div className="flex flex-col justify-center text-white">
                         <h2 className="text-display-sm font-semibold md:text-display-md">Ready to make an offer stronger?</h2>
                         <p className="mt-4 text-lg opacity-90">
-                            A verified pre-approval helps you pull past and move re=fast at closing.
+                            A verified pre-approval helps you stand out and move fast at closing.
                         </p>
                         <ul className="mt-8 flex flex-col gap-4">
                             {[
@@ -468,11 +392,11 @@ const PreApprovalCTA = () => {
                                 "Clear explanations (no confusing lender speech)",
                                 "Lock strategy help (timing matters)",
                             ].map((feat) => (
-                                <CheckItemText 
-                                    key={feat} 
-                                    size="md" 
-                                    iconStyle="outlined" 
-                                    color="primary" 
+                                <CheckItemText
+                                    key={feat}
+                                    size="md"
+                                    iconStyle="outlined"
+                                    color="primary"
                                     text={feat}
                                     textClassName="text-white"
                                     iconClassName="text-white"
@@ -563,67 +487,45 @@ const TestimonialSection = () => {
     );
 };
 
-const FooterLarge02 = () => {
+const FooterMinimal = () => {
+    const legalLinks = [
+        { label: "Privacy", href: "/privacy" },
+        { label: "Terms", href: "/terms" },
+        { label: "Licensing", href: "/licensing" },
+        { label: "Contact", href: "/contact" },
+    ];
+
     return (
-        <footer className="dark-mode">
-            <div className="bg-primary py-12 md:pt-16">
-                <div className="mx-auto max-w-container px-4 md:px-8">
-                    <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
-                        <div className="flex flex-col items-start gap-6 md:w-80">
-                            <a href="/">
-                                <PurchaseRatesLogo className="h-10 w-auto text-white" />
+        <footer className="border-t border-secondary bg-primary py-6">
+            <div className="mx-auto max-w-container px-4 md:px-8">
+                <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+                    {/* Left: Legal links */}
+                    <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+                        {legalLinks.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.href}
+                                className="text-sm text-tertiary hover:text-secondary transition-colors"
+                            >
+                                {link.label}
                             </a>
-                            <p className="text-md text-tertiary">
-                                Find the best purchase mortgage rates and get matched with licensed loan experts. 
-                                No spam, no pressure—just great rates.
-                            </p>
-                            <RatingBadge />
-                        </div>
-                        <nav className="flex-1">
-                            <ul className="grid flex-1 grid-cols-2 gap-8 md:grid-cols-4">
-                                {footerNavList.map((category) => (
-                                    <li key={category.label}>
-                                        <h4 className="text-sm font-semibold text-quaternary">{category.label}</h4>
-                                        <ul className="mt-4 flex flex-col gap-3">
-                                            {category.items.map((item) => (
-                                                <li key={item.label}>
-                                                    <Button color="link-gray" size="lg" href={item.href}>
-                                                        {item.label}
-                                                    </Button>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </li>
-                                ))}
-                            </ul>
-                        </nav>
-                    </div>
+                        ))}
+                        <span className="text-sm text-quaternary">NMLS #123456</span>
+                    </nav>
+
+                    {/* Right: Phone number */}
+                    <a
+                        href="tel:1234567890"
+                        className="flex items-center gap-2 text-sm font-medium text-secondary hover:text-primary transition-colors"
+                    >
+                        <Phone className="size-4" />
+                        (123) 456-7890
+                    </a>
                 </div>
-            </div>
-            <div className="bg-secondary_alt py-10 md:py-12">
-                <div className="mx-auto max-w-container px-4 md:px-8">
-                    <div className="flex flex-col-reverse justify-between gap-6 md:flex-row">
-                        <div className="flex flex-col gap-2">
-                            <p className="text-md text-quaternary">© 2024 PurchaseRates.com. All rights reserved.</p>
-                            <p className="text-sm text-quaternary">NMLS #123456 | Equal Housing Lender</p>
-                        </div>
-                        <ul className="flex gap-6">
-                            {footerSocials.map(({ label, icon: Icon, href }) => (
-                                <li key={label}>
-                                    <a
-                                        href={href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-fg-quaternary transition duration-100 hover:text-fg-quaternary_hover"
-                                        aria-label={label}
-                                    >
-                                        <Icon width={24} height={24} />
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+
+                <p className="mt-4 text-center text-xs text-quaternary">
+                    © 2024 PurchaseRates.com. All rights reserved. Equal Housing Lender.
+                </p>
             </div>
         </footer>
     );
@@ -650,7 +552,7 @@ export default function Home() {
             
             <TestimonialSection />
             
-            <FooterLarge02 />
+            <FooterMinimal />
         </div>
     );
 }

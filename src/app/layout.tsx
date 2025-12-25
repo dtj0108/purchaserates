@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { RouteProvider } from "@/providers/route-provider";
-import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 
 const inter = Inter({
@@ -55,12 +54,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
+        <html lang="en" className={`${inter.variable} scroll-smooth light-mode`}>
             <body className="bg-primary antialiased">
                 <RouteProvider>
-                    <ThemeProvider>
-                        {children}
-                    </ThemeProvider>
+                    {children}
                 </RouteProvider>
             </body>
         </html>
