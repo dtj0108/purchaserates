@@ -9,7 +9,7 @@ import { Menu01, XClose, Phone } from "@untitledui/icons";
 const navLinks = [
     { href: "/rates", label: "Rates", isExternal: false },
     { href: "/calculator", label: "Calculator", isExternal: false },
-    { href: "#programs", label: "Programs", isExternal: true },
+    { href: "/programs", label: "Programs", isExternal: false },
     { href: "/articles", label: "Articles", isExternal: false },
     { href: "/faq", label: "FAQs", isExternal: false },
 ];
