@@ -16,3 +16,4 @@ export const RouteProvider = ({ children }: PropsWithChildren) => {
     return <RouterProvider navigate={router.push}>{children}</RouterProvider>;
 };
 
+

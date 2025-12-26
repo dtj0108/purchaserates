@@ -505,6 +505,7 @@ const TestimonialSection = () => {
 
 const FooterMinimal = () => {
     const legalLinks = [
+        { label: "About", href: "/about" },
         { label: "Privacy", href: "/privacy" },
         { label: "Terms", href: "/terms" },
         { label: "Licensing", href: "/licensing" },

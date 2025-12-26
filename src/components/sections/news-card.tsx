@@ -92,3 +92,4 @@ export const NewsCard = ({ article, className }: NewsCardProps) => {
   );
 };
 
+

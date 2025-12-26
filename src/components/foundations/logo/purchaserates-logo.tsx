@@ -24,3 +24,4 @@ export const PurchaseRatesLogo = (props: ComponentPropsWithoutRef<"svg">) => {
     );
 };
 
+

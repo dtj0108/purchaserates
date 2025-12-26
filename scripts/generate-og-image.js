@@ -74,3 +74,4 @@ fs.writeFileSync(outputPath, buffer);
 console.log(`✅ OG image generated: ${outputPath}`);
 console.log(`   Dimensions: ${width}x${height}`);
 
+
