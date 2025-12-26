@@ -26,6 +26,10 @@
     transition-timing-function: inherit;
 }
 
+@utility bg-gradient-sky {
+    background: linear-gradient(180deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-mid) 50%, var(--color-bg-gradient-end) 100%);
+}
+
 html,
 body {
     font-family: var(--font-body);

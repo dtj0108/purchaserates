@@ -81,7 +81,7 @@ export default function CalculatorPage() {
     };
 
     return (
-        <div className="min-h-screen bg-secondary_alt">
+        <div className="min-h-screen bg-gradient-sky">
             <Header />
 
             <main className="mx-auto max-w-4xl px-4 py-4 md:px-8 md:py-6">

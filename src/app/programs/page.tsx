@@ -1,8 +1,17 @@
 "use client";
 
-import { Home04, Shield01, Flag01, Building07, Bank, Users01, RefreshCcw01, TrendUp01 } from "@untitledui/icons";
 import { Header } from "@/components/marketing/header-navigation/header";
 import { Button } from "@/components/base/buttons/button";
+import {
+    ConventionalIcon,
+    FHAIcon,
+    VAIcon,
+    USDAIcon,
+    JumboIcon,
+    FirstTimeBuyerIcon,
+    RefinanceIcon,
+    ARMIcon,
+} from "@/components/illustrations/program-icons";
 
 interface Program {
     name: string;
@@ -15,7 +24,7 @@ const programs: Program[] = [
     {
         name: "Conventional Loan",
         description: "Traditional mortgage for borrowers with good credit and stable income.",
-        icon: Home04,
+        icon: ConventionalIcon,
         benefits: [
             "Down payments as low as 3%",
             "No upfront mortgage insurance",
@@ -25,7 +34,7 @@ const programs: Program[] = [
     {
         name: "FHA Loan",
         description: "Government-backed loan with flexible credit requirements.",
-        icon: Building07,
+        icon: FHAIcon,
         benefits: [
             "3.5% down with 580+ credit score",
             "Accept credit scores as low as 500",
@@ -35,7 +44,7 @@ const programs: Program[] = [
     {
         name: "VA Loan",
         description: "Exclusive benefits for veterans, active military, and eligible spouses.",
-        icon: Flag01,
+        icon: VAIcon,
         benefits: [
             "No down payment required",
             "No private mortgage insurance",
@@ -45,7 +54,7 @@ const programs: Program[] = [
     {
         name: "USDA Loan",
         description: "Zero-down financing for homes in eligible rural and suburban areas.",
-        icon: Bank,
+        icon: USDAIcon,
         benefits: [
             "No down payment required",
             "Below-market interest rates",
@@ -55,7 +64,7 @@ const programs: Program[] = [
     {
         name: "Jumbo Loan",
         description: "Financing for high-value properties that exceed conforming loan limits.",
-        icon: Shield01,
+        icon: JumboIcon,
         benefits: [
             "Loan amounts above $766,550",
             "Competitive rates for qualified buyers",
@@ -65,7 +74,7 @@ const programs: Program[] = [
     {
         name: "First-Time Homebuyer",
         description: "Special programs designed to help you purchase your first home.",
-        icon: Users01,
+        icon: FirstTimeBuyerIcon,
         benefits: [
             "Down payment assistance available",
             "Lower credit score requirements",
@@ -75,7 +84,7 @@ const programs: Program[] = [
     {
         name: "Refinance",
         description: "Replace your current mortgage with better terms or access your equity.",
-        icon: RefreshCcw01,
+        icon: RefinanceIcon,
         benefits: [
             "Lower your interest rate",
             "Reduce monthly payments",
@@ -85,7 +94,7 @@ const programs: Program[] = [
     {
         name: "Adjustable Rate (ARM)",
         description: "Lower initial rate that adjusts after a fixed period.",
-        icon: TrendUp01,
+        icon: ARMIcon,
         benefits: [
             "Lower initial monthly payments",
             "5/1, 7/1, and 10/1 ARM options",
@@ -98,12 +107,12 @@ function ProgramCard({ program }: { program: Program }) {
     const Icon = program.icon;
 
     return (
-        <div className="flex flex-col rounded-xl border border-secondary bg-primary p-4 shadow-sm">
-            <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-secondary">
-                    <Icon className="h-5 w-5 text-brand-primary" />
+        <div className="flex flex-col rounded-2xl border border-secondary bg-primary p-5 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-4">
+                <div className="shrink-0">
+                    <Icon className="h-16 w-16" />
                 </div>
-                <h3 className="text-base font-semibold text-primary">{program.name}</h3>
+                <h3 className="text-lg font-semibold text-primary">{program.name}</h3>
             </div>
             <ul className="mt-3 space-y-1.5 flex-1">
                 <li className="flex items-start gap-2 text-sm text-secondary">
@@ -126,7 +135,7 @@ function ProgramCard({ program }: { program: Program }) {
 
 export default function ProgramsPage() {
     return (
-        <div className="min-h-screen bg-secondary_alt">
+        <div className="min-h-screen bg-gradient-sky">
             <Header />
 
             <main className="mx-auto max-w-4xl px-4 py-4 md:px-8 md:py-6">

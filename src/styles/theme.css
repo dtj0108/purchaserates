@@ -269,6 +269,11 @@
     --color-fg-success-primary: var(--color-success-600);
     --color-fg-success-secondary: var(--color-success-500);
 
+    /* GRADIENT COLORS */
+    --color-bg-gradient-start: rgb(235 245 255);
+    --color-bg-gradient-mid: rgb(245 250 255);
+    --color-bg-gradient-end: rgb(255 255 255);
+
     /* BACKGROUND COLORS */
     --color-bg-primary: var(--color-white);
     --color-bg-primary_alt: var(--color-white);

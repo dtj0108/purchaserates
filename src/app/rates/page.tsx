@@ -262,7 +262,7 @@ const RateChartInteractive = () => {
 
 export default function RatesPage() {
     return (
-        <div className="min-h-screen bg-secondary_alt overflow-x-hidden">
+        <div className="min-h-screen bg-gradient-sky overflow-x-hidden">
             <Header />
 
             <main className="mx-auto max-w-7xl px-4 py-6 sm:py-8 md:px-8 md:py-12 overflow-hidden">

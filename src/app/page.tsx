@@ -23,7 +23,7 @@ const lenders = [
 
 const HeroScreenMockup01 = () => {
     return (
-        <div className="relative overflow-hidden bg-secondary_alt">
+        <div className="relative overflow-hidden bg-gradient-sky">
             <Header />
 
             <section className="relative overflow-hidden py-12 sm:py-16 md:py-20">

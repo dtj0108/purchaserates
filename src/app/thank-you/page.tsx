@@ -6,7 +6,7 @@ import { PurchaseRatesLogo } from "@/components/foundations/logo/purchaserates-l
 
 export default function ThankYouPage() {
     return (
-        <div className="min-h-screen bg-secondary_alt">
+        <div className="min-h-screen bg-gradient-sky">
             {/* Header */}
             <header className="border-b border-secondary bg-primary">
                 <div className="mx-auto max-w-container px-4 md:px-8">

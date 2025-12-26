@@ -87,7 +87,7 @@ Credit Range: ${creditRange}`;
     };
 
     return (
-        <section className="grid min-h-screen grid-cols-1 bg-primary lg:grid-cols-2">
+        <section className="grid min-h-screen grid-cols-1 bg-gradient-sky lg:grid-cols-2">
             {/* Left side - Form */}
             <div className="flex flex-col bg-primary">
                 <header className="hidden p-4 md:block lg:p-6">

@@ -94,7 +94,7 @@ export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <div className="min-h-screen bg-secondary_alt">
+        <div className="min-h-screen bg-gradient-sky">
             <Header />
 
             <main className="mx-auto max-w-3xl px-4 py-4 md:px-8 md:py-6">

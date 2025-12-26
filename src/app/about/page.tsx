@@ -225,7 +225,7 @@ const FooterSimple = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-secondary_alt py-10 md:py-12">
+            <div className="bg-gradient-sky py-10 md:py-12">
                 <div className="mx-auto max-w-container px-4 md:px-8">
                     <div className="flex flex-col-reverse justify-between gap-6 md:flex-row">
                         <div className="flex flex-col gap-2">
