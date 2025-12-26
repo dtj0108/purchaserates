@@ -2,7 +2,7 @@ import { type ComponentPropsWithoutRef } from "react";
 
 export const PurchaseRatesLogo = (props: ComponentPropsWithoutRef<"svg">) => {
     return (
-        <svg viewBox="0 0 195 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <svg viewBox="0 0 205 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             {/* House illustration */}
             <g>
                 {/* House base */}
@@ -29,14 +29,14 @@ export const PurchaseRatesLogo = (props: ComponentPropsWithoutRef<"svg">) => {
                 <text x="26" y="14" fontSize="7" fontWeight="bold" fill="#854D0E" textAnchor="middle">$</text>
             </g>
 
-            {/* Text - tighter spacing for mobile */}
+            {/* Text */}
             <text x="38" y="26" fontSize="16" fontWeight="700" fill="#16A34A" fontFamily="system-ui, -apple-system, sans-serif">
                 Purchase
             </text>
-            <text x="111" y="26" fontSize="16" fontWeight="700" fill="#3B82F6" fontFamily="system-ui, -apple-system, sans-serif">
+            <text x="118" y="26" fontSize="16" fontWeight="700" fill="#3B82F6" fontFamily="system-ui, -apple-system, sans-serif">
                 Rates
             </text>
-            <text x="156" y="26" fontSize="16" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.6">
+            <text x="163" y="26" fontSize="16" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.6">
                 .com
             </text>
         </svg>
