@@ -30,7 +30,7 @@ const HeroScreenMockup01 = () => {
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
                         {/* Left Column - Content & Form */}
-                        <div className="order-2 flex flex-col lg:order-1">
+                        <div className="flex flex-col">
                             <h1 className="text-3xl font-semibold text-primary sm:text-display-sm md:text-display-md">
                                 Get the Best Purchase Mortgage Rate—Fast
                             </h1>
@@ -53,6 +53,21 @@ const HeroScreenMockup01 = () => {
                                     <span className="text-md text-secondary">Same-day pre-approval available</span>
                                 </li>
                             </ul>
+
+                            {/* Mobile CTAs - after bullet points */}
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:hidden">
+                                <Button size="lg" href="/get-started" className="w-full sm:w-auto">
+                                    Get My Rate
+                                </Button>
+                                <Button size="lg" color="secondary" href="/rates" className="w-full sm:w-auto">
+                                    See Today's Rates
+                                </Button>
+                            </div>
+
+                            {/* Mobile: House illustration */}
+                            <div className="mt-8 flex justify-center lg:hidden">
+                                <HouseIllustration />
+                            </div>
 
                             {/* Calculator Form */}
                             <div className="mt-8 rounded-xl bg-primary p-6 shadow-lg ring-1 ring-secondary">
@@ -110,8 +125,8 @@ const HeroScreenMockup01 = () => {
                             </a>
                         </div>
 
-                        {/* Right Column - Illustration */}
-                        <div className="order-1 relative flex flex-col items-center justify-center lg:order-2 lg:items-end">
+                        {/* Right Column - Illustration (desktop only) */}
+                        <div className="hidden lg:flex relative flex-col items-center justify-center lg:items-end">
                             <HouseIllustration />
 
                             {/* Rating and testimonial */}
@@ -175,10 +190,10 @@ const HowItWorksSection = () => {
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_1fr] lg:items-center lg:gap-16">
                     {/* Left: How it works */}
                     <div>
-                        <h2 className="text-2xl font-semibold text-primary mb-8 sm:text-display-sm">
+                        <h2 className="text-2xl font-semibold text-primary mb-8 text-center sm:text-display-sm lg:text-left">
                             How It Works
                         </h2>
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+                        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
                             {steps.map((step) => (
                                 <div key={step.number} className="flex flex-col items-center text-center sm:items-start sm:text-left">
                                     <FeaturedIcon icon={step.icon} size="md" color="brand" theme="light" />
@@ -217,29 +232,30 @@ const TodaysRatesSection = () => {
     return (
         <section className="bg-secondary py-8 sm:py-12">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="rounded-xl border border-secondary bg-primary p-4 sm:p-6">
-                    <div className="mb-4 text-center">
+                <div className="rounded-xl border border-secondary bg-primary p-5 sm:p-6">
+                    <div className="mb-5 text-center">
                         <h2 className="text-lg font-semibold text-primary sm:text-xl">
                             Today's Purchase Rates <span className="text-tertiary text-sm">(Examples)</span>
                         </h2>
-                        <p className="mt-1 text-xs text-tertiary sm:text-sm">
+                        <p className="mt-2 text-xs text-tertiary sm:text-sm">
                             Rates vary by credit, LTV, property type, and location.
                         </p>
                     </div>
 
-                    {/* Compact horizontal rate list */}
-                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-x-8">
+                    {/* Rate list - grid on mobile, flex on larger screens */}
+                    <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-8 sm:gap-y-3">
                         {rates.map((rate) => (
                             <div key={rate.type} className="flex items-center gap-2">
                                 <CheckCircle className="size-4 text-fg-brand-primary shrink-0" />
-                                <span className="text-sm font-medium text-primary">{rate.type}</span>
-                                <span className="text-sm text-tertiary">—</span>
-                                <span className="text-sm font-bold text-brand-tertiary">from {rate.rate}</span>
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                                    <span className="text-sm font-medium text-primary">{rate.type}</span>
+                                    <span className="text-sm font-bold text-brand-tertiary">from {rate.rate}</span>
+                                </div>
                             </div>
                         ))}
                     </div>
 
-                    <div className="mt-4 flex justify-center">
+                    <div className="mt-5 flex justify-center">
                         <Button size="md" color="secondary" href="/rates">
                             View All Rates
                         </Button>

@@ -1,10 +1,17 @@
 "use client";
 
 import { TrendUp02 } from "@untitledui/icons";
+import { cx } from "@/utils/cx";
 
-export const HouseIllustration = () => {
+interface HouseIllustrationProps {
+    size?: "sm" | "lg";
+}
+
+export const HouseIllustration = ({ size = "lg" }: HouseIllustrationProps) => {
+    const isSmall = size === "sm";
+
     return (
-        <div className="relative w-full max-w-lg">
+        <div className={cx("relative", isSmall ? "w-20 shrink-0" : "w-full max-w-lg")}>
             {/* Main SVG illustration */}
             <svg
                 viewBox="0 0 400 320"
@@ -69,7 +76,8 @@ export const HouseIllustration = () => {
                 <text x="200" y="128" textAnchor="middle" className="fill-white text-xl font-bold">$</text>
             </svg>
 
-            {/* Rates trending badge - positioned top right */}
+            {/* Rates trending badge - positioned top right (hidden on small) */}
+            {!isSmall && (
             <div className="absolute top-2 right-0 rounded-lg bg-white px-4 py-3 shadow-lg ring-1 ring-gray-200">
                 <div className="flex items-center gap-1 mb-1">
                     <div className="flex gap-0.5">
@@ -84,6 +92,7 @@ export const HouseIllustration = () => {
                 </div>
                 <p className="text-2xl font-bold text-brand-600 mt-1">6.35%</p>
             </div>
+            )}
         </div>
     );
 };
