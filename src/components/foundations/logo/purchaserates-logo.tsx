@@ -33,10 +33,10 @@ export const PurchaseRatesLogo = (props: ComponentPropsWithoutRef<"svg">) => {
             <text x="38" y="26" fontSize="16" fontWeight="700" fill="#16A34A" fontFamily="system-ui, -apple-system, sans-serif">
                 Purchase
             </text>
-            <text x="114" y="26" fontSize="16" fontWeight="700" fill="#3B82F6" fontFamily="system-ui, -apple-system, sans-serif">
+            <text x="110" y="26" fontSize="16" fontWeight="700" fill="#3B82F6" fontFamily="system-ui, -apple-system, sans-serif">
                 Rates
             </text>
-            <text x="159" y="26" fontSize="16" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.6">
+            <text x="155" y="26" fontSize="16" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.6">
                 .com
             </text>
         </svg>
