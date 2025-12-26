@@ -129,7 +129,7 @@ const HeroScreenMockup01 = () => {
                                     Get My Rate
                                 </Button>
                                 <a href="/calculator" className="mt-3 block text-center text-sm text-blue-500 hover:text-blue-600 font-medium transition-colors">
-                                    View Calculator
+                                    Mortgage Calculator
                                 </a>
                             </div>
 
