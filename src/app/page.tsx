@@ -372,7 +372,7 @@ const CheckItemText = (props: {
 
 const PreApprovalCTA = () => {
     return (
-        <section className="relative bg-brand-section py-16 md:py-24 overflow-hidden">
+        <section className="relative bg-blue-600 py-16 md:py-24 overflow-hidden">
             {/* Background cityscape illustration */}
             <div className="absolute inset-0 pointer-events-none">
                 <svg
