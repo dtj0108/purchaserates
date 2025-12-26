@@ -120,7 +120,7 @@ const HeroScreenMockup01 = () => {
                                 </Button>
                             </div>
 
-                            <a href="/rates" className="mt-3 text-sm text-brand-secondary hover:text-brand-secondary_hover font-medium transition-colors">
+                            <a href="/rates" className="mt-3 block text-center text-sm text-brand-secondary hover:text-brand-secondary_hover font-medium transition-colors lg:text-left">
                                 See Today's Rates →
                             </a>
                         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TrendDown02, TrendUp02 } from "@untitledui/icons";
+import { TrendDown02, TrendUp02, ChevronRight } from "@untitledui/icons";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 import { Button } from "@/components/base/buttons/button";
 import { Badge } from "@/components/base/badges/badges";
@@ -156,7 +156,7 @@ const RateChartInteractive = () => {
     });
 
     return (
-        <Card className="border-secondary">
+        <Card className="border-secondary overflow-hidden">
             <CardHeader className="flex items-center gap-2 space-y-0 border-b border-secondary py-5 sm:flex-row">
                 <div className="grid flex-1 gap-1">
                     <CardTitle>Mortgage Rate Trends</CardTitle>
@@ -262,10 +262,10 @@ const RateChartInteractive = () => {
 
 export default function RatesPage() {
     return (
-        <div className="min-h-screen bg-secondary_alt">
+        <div className="min-h-screen bg-secondary_alt overflow-x-hidden">
             <Header />
 
-            <main className="mx-auto max-w-7xl px-4 py-6 sm:py-8 md:px-8 md:py-12">
+            <main className="mx-auto max-w-7xl px-4 py-6 sm:py-8 md:px-8 md:py-12 overflow-hidden">
                 {/* Page Header */}
                 <div className="mb-6 sm:mb-8">
                     <h1 className="text-2xl font-semibold text-primary sm:text-display-sm md:text-display-md">
@@ -292,11 +292,22 @@ export default function RatesPage() {
                 {/* Rates Table */}
                 <div className="rounded-lg border border-secondary bg-primary shadow-xs sm:rounded-xl">
                     <div className="border-b border-secondary p-4 sm:p-6">
-                        <h2 className="text-lg font-semibold text-primary sm:text-xl">Compare Rates</h2>
-                        <p className="mt-1 text-xs text-tertiary sm:text-sm">Based on $400,000 loan amount</p>
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <h2 className="text-lg font-semibold text-primary sm:text-xl">Compare Rates</h2>
+                                <p className="mt-1 text-xs text-tertiary sm:text-sm">Based on $400,000 loan amount</p>
+                            </div>
+                            {/* Mobile scroll hint */}
+                            <div className="flex items-center gap-1 text-xs text-tertiary sm:hidden">
+                                <span>Scroll</span>
+                                <ChevronRight className="size-4 animate-pulse" />
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div className="overflow-x-auto -mx-4 sm:mx-0">
+
+                    <div className="relative overflow-x-auto">
+                        {/* Fade gradient on right edge (mobile) */}
+                        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-primary to-transparent sm:hidden" />
                         <table className="w-full min-w-[640px]">
                             <thead>
                                 <tr className="border-b border-secondary bg-secondary_subtle">
