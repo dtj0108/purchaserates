@@ -2,50 +2,41 @@ import { type ComponentPropsWithoutRef } from "react";
 
 export const PurchaseRatesLogo = (props: ComponentPropsWithoutRef<"svg">) => {
     return (
-        <svg viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <svg viewBox="0 0 195 40" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
             {/* House illustration */}
             <g>
                 {/* House base */}
-                <rect x="8" y="18" width="24" height="18" rx="2" fill="#FAFAFA" stroke="#E5E7EB" strokeWidth="1" />
+                <rect x="6" y="18" width="20" height="16" rx="2" fill="#FAFAFA" stroke="#E5E7EB" strokeWidth="1" />
 
                 {/* Roof */}
-                <path d="M5 20 L20 8 L35 20 Z" fill="#3B82F6" />
-                <path d="M7 19 L20 9 L33 19 Z" fill="#60A5FA" />
+                <path d="M3 19 L16 8 L29 19 Z" fill="#3B82F6" />
+                <path d="M5 18 L16 9 L27 18 Z" fill="#60A5FA" />
 
                 {/* Door */}
-                <rect x="17" y="26" width="6" height="10" rx="1" fill="#1E40AF" />
-                <circle cx="21.5" cy="31" r="0.8" fill="#FDE047" />
+                <rect x="13" y="24" width="6" height="10" rx="1" fill="#1E40AF" />
+                <circle cx="17" cy="29" r="0.8" fill="#FDE047" />
 
-                {/* Window */}
-                <rect x="10" y="22" width="5" height="5" rx="0.5" fill="#BFDBFE" stroke="#93C5FD" strokeWidth="0.5" />
-                <line x1="12.5" y1="22" x2="12.5" y2="27" stroke="#93C5FD" strokeWidth="0.5" />
-                <line x1="10" y1="24.5" x2="15" y2="24.5" stroke="#93C5FD" strokeWidth="0.5" />
-
-                <rect x="25" y="22" width="5" height="5" rx="0.5" fill="#BFDBFE" stroke="#93C5FD" strokeWidth="0.5" />
-                <line x1="27.5" y1="22" x2="27.5" y2="27" stroke="#93C5FD" strokeWidth="0.5" />
-                <line x1="25" y1="24.5" x2="30" y2="24.5" stroke="#93C5FD" strokeWidth="0.5" />
-
-                {/* Chimney */}
-                <rect x="26" y="10" width="4" height="8" fill="#6B7280" />
+                {/* Windows */}
+                <rect x="8" y="21" width="4" height="4" rx="0.5" fill="#BFDBFE" stroke="#93C5FD" strokeWidth="0.5" />
+                <rect x="20" y="21" width="4" height="4" rx="0.5" fill="#BFDBFE" stroke="#93C5FD" strokeWidth="0.5" />
 
                 {/* Grass */}
-                <ellipse cx="20" cy="37" rx="18" ry="4" fill="#22C55E" />
-                <ellipse cx="20" cy="36.5" rx="16" ry="3" fill="#4ADE80" />
+                <ellipse cx="16" cy="35" rx="14" ry="3" fill="#22C55E" />
 
                 {/* Dollar badge */}
-                <circle cx="32" cy="12" r="6" fill="#FDE047" />
-                <circle cx="32" cy="12" r="4.5" fill="#FBBF24" />
-                <text x="32" y="15" fontSize="8" fontWeight="bold" fill="#854D0E" textAnchor="middle">$</text>
-
-                {/* Small trend arrow */}
-                <path d="M6 14 L6 10 L10 10" stroke="#22C55E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <circle cx="26" cy="11" r="5" fill="#FDE047" />
+                <circle cx="26" cy="11" r="3.5" fill="#FBBF24" />
+                <text x="26" y="14" fontSize="7" fontWeight="bold" fill="#854D0E" textAnchor="middle">$</text>
             </g>
 
-            {/* Text */}
-            <text x="48" y="27" fontSize="17" fontWeight="700" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif">
-                PurchaseRates
+            {/* Text - tighter spacing for mobile */}
+            <text x="38" y="26" fontSize="16" fontWeight="700" fill="#16A34A" fontFamily="system-ui, -apple-system, sans-serif">
+                Purchase
             </text>
-            <text x="167" y="27" fontSize="17" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.7">
+            <text x="111" y="26" fontSize="16" fontWeight="700" fill="#3B82F6" fontFamily="system-ui, -apple-system, sans-serif">
+                Rates
+            </text>
+            <text x="156" y="26" fontSize="16" fontWeight="400" fill="currentColor" fontFamily="system-ui, -apple-system, sans-serif" opacity="0.6">
                 .com
             </text>
         </svg>
