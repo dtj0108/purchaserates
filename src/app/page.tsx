@@ -10,6 +10,16 @@ import { Header } from "@/components/marketing/header-navigation/header";
 import { SectionDivider } from "@/components/shared-assets/section-divider";
 import { BadgeWithDot } from "@/components/base/badges/badge-with-dot";
 import { HouseIllustration } from "@/components/illustrations/HouseIllustration";
+import {
+    ConventionalIcon,
+    FHAIcon,
+    VAIcon,
+    JumboIcon,
+    FirstTimeBuyerIcon,
+    ScenarioIcon,
+    OptionsIcon,
+    PreApprovedIcon,
+} from "@/components/illustrations/program-icons";
 import { cx } from "@/utils/cx";
 
 const lenders = [
@@ -165,19 +175,19 @@ const HowItWorksSection = () => {
     const steps = [
         {
             number: 1,
-            icon: Users01,
+            Icon: ScenarioIcon,
             title: "Tell us your scenario",
             description: "Purchase price, down payment, timeline.",
         },
         {
             number: 2,
-            icon: Percent01,
+            Icon: OptionsIcon,
             title: "See your best options",
             description: "Conventional, FHA, VA, Jumbo—explained clearly.",
         },
         {
             number: 3,
-            icon: CheckCircle,
+            Icon: PreApprovedIcon,
             title: "Get pre-approved",
             description: "Upload docs securely. Fast turnaround.",
         },
@@ -196,7 +206,7 @@ const HowItWorksSection = () => {
                         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
                             {steps.map((step) => (
                                 <div key={step.number} className="flex flex-col items-center text-center sm:items-start sm:text-left">
-                                    <FeaturedIcon icon={step.icon} size="md" color="brand" theme="light" />
+                                    <step.Icon className="h-16 w-16" />
                                     <h3 className="mt-4 text-lg font-semibold text-primary">{step.title}</h3>
                                     <p className="mt-1 text-sm text-tertiary">{step.description}</p>
                                 </div>
@@ -269,27 +279,27 @@ const TodaysRatesSection = () => {
 const LoanProgramsSection = () => {
     const programs = [
         {
-            icon: Home04,
+            Icon: ConventionalIcon,
             title: "Conventional",
             subtitle: "Best for closing fastest timeline.",
         },
         {
-            icon: CheckCircle,
+            Icon: FHAIcon,
             title: "FHA",
             subtitle: "Flexible credit, low down.",
         },
         {
-            icon: Users01,
+            Icon: VAIcon,
             title: "VA",
             subtitle: "Eligible veterans, 0% down.",
         },
         {
-            icon: TrendUp02,
+            Icon: JumboIcon,
             title: "Jumbo",
             subtitle: "High-$ loan amounts.",
         },
         {
-            icon: Home04,
+            Icon: FirstTimeBuyerIcon,
             title: "First Time Buyer",
             subtitle: "3%-5% down options.",
         },
@@ -312,9 +322,9 @@ const LoanProgramsSection = () => {
                     {programs.map((program) => (
                         <div
                             key={program.title}
-                            className="flex flex-col items-center gap-3 rounded-xl border border-secondary bg-primary p-6 text-center transition-colors hover:border-brand"
+                            className="flex flex-col items-center gap-3 rounded-xl border border-secondary bg-primary p-6 text-center transition-all hover:border-brand hover:shadow-md"
                         >
-                            <FeaturedIcon icon={program.icon} size="md" color="brand" theme="light" />
+                            <program.Icon className="h-16 w-16" />
                             <h3 className="text-md font-semibold text-primary">{program.title}</h3>
                             <p className="text-sm text-tertiary">{program.subtitle}</p>
                         </div>

@@ -1,5 +1,83 @@
-// Illustrated icons for mortgage programs
+// Illustrated icons for mortgage programs and how it works steps
 // Style inspired by modern fintech illustrations with soft colors
+
+// === HOW IT WORKS ICONS ===
+
+export function ScenarioIcon({ className }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            {/* Background circle */}
+            <circle cx="40" cy="40" r="38" fill="#DBEAFE" />
+            {/* Clipboard */}
+            <rect x="22" y="18" width="36" height="48" rx="4" fill="#3B82F6" />
+            <rect x="26" y="22" width="28" height="40" rx="2" fill="white" />
+            {/* Clipboard clip */}
+            <rect x="32" y="14" width="16" height="10" rx="2" fill="#1E40AF" />
+            <rect x="36" y="16" width="8" height="6" rx="1" fill="#93C5FD" />
+            {/* Form lines */}
+            <rect x="30" y="30" width="12" height="3" rx="1" fill="#BFDBFE" />
+            <rect x="30" y="38" width="20" height="3" rx="1" fill="#BFDBFE" />
+            <rect x="30" y="46" width="16" height="3" rx="1" fill="#BFDBFE" />
+            {/* Dollar sign */}
+            <circle cx="56" cy="54" r="10" fill="#FDE047" />
+            <text x="52" y="59" fontSize="12" fontWeight="bold" fill="#854D0E">$</text>
+            {/* Pencil */}
+            <rect x="44" y="28" width="4" height="16" rx="1" fill="#F59E0B" transform="rotate(15 46 36)" />
+            <path d="M52 24L56 28L54 30L50 26L52 24Z" fill="#FBBF24" />
+        </svg>
+    );
+}
+
+export function OptionsIcon({ className }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            {/* Background circle */}
+            <circle cx="40" cy="40" r="38" fill="#DCFCE7" />
+            {/* Card 1 - left */}
+            <rect x="10" y="24" width="24" height="32" rx="3" fill="white" stroke="#22C55E" strokeWidth="2" />
+            <rect x="14" y="30" width="10" height="10" rx="2" fill="#BBF7D0" />
+            <rect x="14" y="44" width="16" height="2" rx="1" fill="#86EFAC" />
+            <rect x="14" y="50" width="12" height="2" rx="1" fill="#86EFAC" />
+            {/* Card 2 - center (highlighted) */}
+            <rect x="28" y="18" width="24" height="36" rx="3" fill="#22C55E" />
+            <rect x="32" y="24" width="10" height="10" rx="2" fill="#166534" />
+            <rect x="32" y="38" width="16" height="2" rx="1" fill="#BBF7D0" />
+            <rect x="32" y="44" width="12" height="2" rx="1" fill="#BBF7D0" />
+            {/* Star on center card */}
+            <path d="M44 28L45 31H48L45.5 33L46.5 36L44 34L41.5 36L42.5 33L40 31H43L44 28Z" fill="#FDE047" />
+            {/* Card 3 - right */}
+            <rect x="46" y="24" width="24" height="32" rx="3" fill="white" stroke="#22C55E" strokeWidth="2" />
+            <rect x="50" y="30" width="10" height="10" rx="2" fill="#BBF7D0" />
+            <rect x="50" y="44" width="16" height="2" rx="1" fill="#86EFAC" />
+            <rect x="50" y="50" width="12" height="2" rx="1" fill="#86EFAC" />
+            {/* Checkmark badge */}
+            <circle cx="40" cy="62" r="8" fill="#16A34A" />
+            <path d="M36 62L39 65L45 59" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
+
+export function PreApprovedIcon({ className }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+            {/* Background circle */}
+            <circle cx="40" cy="40" r="38" fill="#FEF3C7" />
+            {/* Document */}
+            <rect x="20" y="16" width="32" height="44" rx="3" fill="white" stroke="#F59E0B" strokeWidth="2" />
+            {/* Document lines */}
+            <rect x="26" y="24" width="20" height="3" rx="1" fill="#FDE68A" />
+            <rect x="26" y="32" width="16" height="3" rx="1" fill="#FDE68A" />
+            <rect x="26" y="40" width="18" height="3" rx="1" fill="#FDE68A" />
+            {/* Signature line */}
+            <path d="M26 52C28 50 30 54 32 52C34 50 36 54 38 52" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+            {/* Big checkmark circle */}
+            <circle cx="54" cy="50" r="16" fill="#22C55E" />
+            <path d="M46 50L52 56L64 44" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Upload arrow */}
+            <path d="M58 22L58 14M58 14L54 18M58 14L62 18" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    );
+}
 
 export function ConventionalIcon({ className }: { className?: string }) {
     return (
