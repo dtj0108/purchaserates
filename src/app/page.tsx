@@ -30,7 +30,7 @@ const HeroScreenMockup01 = () => {
                 <div className="mx-auto w-full max-w-container px-4 md:px-8">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
                         {/* Left Column - Content & Form */}
-                        <div className="flex flex-col">
+                        <div className="order-2 flex flex-col lg:order-1">
                             <h1 className="text-3xl font-semibold text-primary sm:text-display-sm md:text-display-md">
                                 Get the Best Purchase Mortgage Rate—Fast
                             </h1>
@@ -111,7 +111,7 @@ const HeroScreenMockup01 = () => {
                         </div>
 
                         {/* Right Column - Illustration */}
-                        <div className="relative flex flex-col items-center justify-center lg:items-end">
+                        <div className="order-1 relative flex flex-col items-center justify-center lg:order-2 lg:items-end">
                             <HouseIllustration />
 
                             {/* Rating and testimonial */}
