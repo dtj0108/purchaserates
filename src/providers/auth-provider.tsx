@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, useMemo, type PropsWithChildren } from "react";
+import { createContext, useContext, useEffect, useState, useCallback, type PropsWithChildren } from "react";
 import { createClient } from "@/lib/supabase-client";
 import type { User, Session, SupabaseClient } from "@supabase/supabase-js";
 
@@ -17,11 +17,17 @@ export function AuthProvider({ children }: PropsWithChildren) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [supabase, setSupabase] = useState<SupabaseClient | null>(null);
 
-  // Memoize the client to prevent recreation on every render
-  const supabase = useMemo(() => createClient(), []);
+  // Initialize Supabase client only on the client side
+  useEffect(() => {
+    const client = createClient();
+    setSupabase(client);
+  }, []);
 
   useEffect(() => {
+    if (!supabase) return;
+
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -41,9 +47,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
     return () => subscription.unsubscribe();
   }, [supabase]);
 
-  const signOut = async () => {
-    await supabase.auth.signOut();
-  };
+  const signOut = useCallback(async () => {
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
+  }, [supabase]);
 
   return (
     <AuthContext.Provider value={{ user, session, isLoading, signOut }}>
