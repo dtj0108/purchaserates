@@ -66,7 +66,7 @@ export const Header = () => {
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="inline-flex items-center justify-center rounded-lg p-2 text-secondary hover:bg-secondary hover:text-primary transition-colors md:hidden"
+                            className="inline-flex items-center justify-center rounded-lg p-2 text-primary hover:bg-secondary transition-colors md:hidden"
                             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                         >
                             {mobileMenuOpen ? (
