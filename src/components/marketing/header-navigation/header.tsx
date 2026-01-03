@@ -58,8 +58,8 @@ export const Header = () => {
                         >
                             310-770-5539
                         </Button>
-                        <Button size="md" href="/get-started" className="hidden md:inline-flex">
-                            Get My Rate
+                        <Button size="md" href="/login" className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700">
+                            Login
                         </Button>
 
                         {/* Mobile Menu Button */}
@@ -107,8 +107,8 @@ export const Header = () => {
                             )}
                         </div>
                         <div className="mt-4 flex flex-col gap-3 border-t border-secondary pt-4">
-                            <Button size="lg" href="/get-started" className="w-full">
-                                Get My Rate
+                            <Button size="lg" href="/login" className="w-full bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700">
+                                Login
                             </Button>
                             <Button
                                 color="secondary"

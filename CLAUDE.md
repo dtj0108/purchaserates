@@ -68,3 +68,21 @@ Key Tailwind customizations:
 The app wraps children with:
 1. `RouteProvider` - Integrates Next.js router with React Aria
 2. `ThemeProvider` - next-themes for light/dark mode switching
+
+### Supabase
+
+The project uses Supabase for backend services. Configuration is in `src/lib/supabase.ts`.
+
+**Environment Variables** (in `.env.local`):
+- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous/public key
+
+**Usage**:
+```typescript
+// Client-side (React components)
+import { supabase } from '@/lib/supabase'
+
+// Server-side (Server Components, Actions, API routes)
+import { createServerClient } from '@/lib/supabase'
+const supabase = createServerClient()
+```
